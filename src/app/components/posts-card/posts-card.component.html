@@ -1,0 +1,19 @@
+<mat-card class="mb-3 mat-elevation-z4">
+    <mat-card-title>
+        <h2 class="mb-0">{{postObj.title}}</h2>
+        <h4 class="mb-0">by user {{postObj.userId}}</h4>
+    </mat-card-title>
+    <mat-card-content>
+       <p class="mb-0">{{postObj.content}}</p>
+    </mat-card-content>
+    <mat-card-footer>
+        <div class="mb-3 mx-3 d-flex justify-content-between">
+            <button
+            (click)="onPostEdit(postObj)"
+            mat-raised-button color="primary">Edit</button>
+            <button 
+            (click)="onPostDelete(postObj)"
+            mat-raised-button color="warn">Delete</button>
+        </div>
+    </mat-card-footer>
+</mat-card>

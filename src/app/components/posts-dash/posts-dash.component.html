@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-6 mb-3 mb-md-0">
+        <div class="d-flex justify-content-center align-items-center">
+            <h2 class="mb-0">Hey, Welcome! Add New Post here</h2>
+            <button 
+            (click)="onOpen()"
+            mat-mini-fab color="primary" class="ml-2">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="col-md-6 d-flex flex-column-reverse" *ngIf="postsArray.length > 0; else noPosts">
+        <ng-container *ngFor="let post of postsArray">
+            <app-posts-card
+            [postObj]="post"
+            ></app-posts-card>            
+        </ng-container>
+    </div>
+    <ng-template #noPosts>
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h4 class="mb-0">No posts added... Start adding posts now...</h4>
+                </li>
+            </ul>            
+        </div>
+    </ng-template>
+</div>
