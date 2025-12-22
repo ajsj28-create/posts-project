@@ -1,0 +1,15 @@
+<div class="row justify-content-center mb-3">
+    <div class="col-md-6">
+        <h2>Products</h2>
+        <app-product-form></app-product-form>
+    </div>
+</div>
+<div class="row justify-content-center mb-3">
+    <div class="col-md-6">
+        <ng-container *ngFor="let prod of productsArray">
+            <app-product-card
+            [prodObj]="prod"
+            ></app-product-card>
+        </ng-container>
+    </div>
+</div>

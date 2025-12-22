@@ -33,7 +33,7 @@ export class PostsCardComponent implements OnInit {
     let config = new MatDialogConfig()
     config.width = '400px'
     config.disableClose = true
-    config.data = obj
+    config.data = `Are you sure to delete post <strong>${obj.title}</strong>?`
     this._confirmDialog.open(ConfirmComponent, config).afterClosed().subscribe({
       next: res => {
         if(res){

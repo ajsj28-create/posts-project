@@ -1,0 +1,29 @@
+<mat-card
+class="mb-3 mat-elevation-z4 {{prodObj.status}}">
+    <mat-card-title>
+        <h2 class="mb-0">{{prodObj.name}}</h2>
+    </mat-card-title>
+    <mat-card-content [ngSwitch]="prodObj.status">
+        <p>{{prodObj.description}}</p>
+        Order is
+        <strong *ngSwitchCase="'inprogress'">In Progress.</strong>
+        <strong *ngSwitchCase="'dispatched'">Dispatched.</strong>
+        <strong *ngSwitchCase="'delivered'">Delivered.</strong>
+    </mat-card-content>
+    <mat-card-actions>
+        <div class="p-2 d-flex justify-content-between">
+            <button
+            (click)="onInProgress()" 
+            [disabled]="prodObj.status === 'inprogress'"
+            mat-raised-button class="btn-grad {{prodObj.status}}">In Progress</button>
+            <button
+            (click)="onDispatched()"  
+            [disabled]="prodObj.status === 'dispatched'"
+            mat-raised-button class="btn-grad {{prodObj.status}}">Dispatched</button>
+            <button
+            (click)="onDelivered()"  
+            [disabled]="prodObj.status === 'delivered'"
+            mat-raised-button class="btn-grad {{prodObj.status}}">Delivered</button>
+        </div>
+    </mat-card-actions>
+</mat-card>

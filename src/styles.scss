@@ -13,3 +13,67 @@ body {
     top: 0;
     right: 0;
 }
+
+.check-true {
+    border-left: 0.35em solid #28a745; 
+}
+
+.check-false {
+    border-left: 0.35em solid #dc3545;
+}
+
+.form-group {
+    position: relative;
+    
+    input:disabled {
+        background-color: #fff;
+        color: rgba(0, 0, 0, .87);
+        border: none;
+        padding-left: 22px;
+    }
+
+    &::after {
+        content: '';
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        
+        
+    }
+}
+
+.form-group {
+    &.check-dot-true::after{
+        background-color: #28a745;
+    }
+
+    &.check-dot-false::after{
+        background-color: #dc3545;
+    }
+}
+
+.inprogress {
+    background-image: linear-gradient( 135deg, #FCCF31 10%, #F55555 100%);
+}
+
+.dispatched {
+    background-image: linear-gradient( 135deg, #5EFCE8 10%, #736EFE 100%);
+}
+
+.delivered {
+    background-image: linear-gradient( 135deg, #70F570 10%, #49C628 100%);
+}
+
+.mat-raised-button.btn-grad {
+   text-transform: uppercase;
+   color: #fff;
+   box-shadow: 0 0 5px 1px #fff;
+}
+
+.back-grey {
+    background-image: linear-gradient(to left, #BDBBBE 0%, #9D9EA3 100%), radial-gradient(88% 271%, rgba(255, 255, 255, 0.25) 0%, rgba(254, 254, 254, 0.25) 1%, rgba(0, 0, 0, 0.25) 100%), radial-gradient(50% 100%, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    background-blend-mode: normal, lighten, soft-light;
+}

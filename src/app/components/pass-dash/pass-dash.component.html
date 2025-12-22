@@ -1,0 +1,22 @@
+<div class="row justify-content-center mb-3">
+    <div class="col-md-6">
+        <h2 class="mb-0">Passengers</h2>
+        <app-checkin-count
+        [checkIns]="checkInCount"
+        [passArrayCo]="passArray"
+        ></app-checkin-count>
+        <app-pass-list
+        [passArrayLi]="passArray"
+        ></app-pass-list>
+    </div>
+</div>
+<div class="row justify-content-center mb-3">
+    <div class="col-md-8">
+        <ng-container *ngFor="let pass of passArray">
+            <app-pass-card
+            (checkInFunction)="getCheckInCount()"
+            [passObjCa]="pass"
+            ></app-pass-card>
+        </ng-container>
+    </div>
+</div>

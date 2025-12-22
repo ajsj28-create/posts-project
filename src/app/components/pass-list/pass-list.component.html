@@ -1,0 +1,17 @@
+<ul class="list-group" *ngIf="passArrayLi.length > 0; else noPass">
+    <li class="list-group-item" 
+    *ngFor="let pass of passArrayLi"
+    [ngClass]="{
+        'check-true': pass.checkedIn,
+        'check-false': !pass.checkedIn
+    }">
+        {{pass.fullname}}
+    </li>
+</ul>
+<ng-template #noPass>
+    <ul class="list-group">
+        <li class="list-group-item">
+            Passengers data not available !
+        </li>
+    </ul>
+</ng-template>
